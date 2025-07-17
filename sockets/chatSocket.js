@@ -10,7 +10,7 @@ let onlineUserArray = {};
 const server = http.createServer(app)
 const io = new Server(server,{
     cors: {
-      origin: 'http://localhost:5173',  // The frontend URL that you want to allow
+      origin: process.env.CLIENT_ORIGIN, // ✅ from env // The frontend URL that you want to allow
       methods: ['GET', 'POST'],        // Allow GET and POST methods
       allowedHeaders: ['Content-Type'], // Allow specific headers
       credentials: true,                // Allow credentials (cookies, etc.)
