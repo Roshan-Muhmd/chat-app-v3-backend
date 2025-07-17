@@ -54,7 +54,10 @@ export const userLogin = async (req, res) => {
       httpOnly: true, // Important to prevent client-side access (XSS protection)
       /* secure: process.env.NODE_ENV === 'production',  // Use `secure: true` in production for HTTPS */
       maxAge: 3600000, // 1 hour in milliseconds (you can adjust this)
+      secure: true,
+    sameSite: 'None'
     });
+
 
     return res.status(200).json({
       status: "Success",
